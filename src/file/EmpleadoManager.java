@@ -169,4 +169,8 @@ public class EmpleadoManager
         
     }
     
+    public void payEmployee(int code) throws IOException{
+        
+    }
+    
 }
