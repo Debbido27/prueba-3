@@ -217,6 +217,16 @@ public class EmpleadoManager
         Date fechaContrato = new Date(remps.readLong());
         System.out.println("Codigo: "+codeLeido+" Nombre: "+name+" Salario:"+salary+"Fecha de contratacion: "+fechaContrato);
         
+        RandomAccessFile rventas = salesFileFor(code);
+        rventas.seek(0);
+        double totalVentas=0;
+        for (int mes = 0; mes < 12; mes++) {
+            double ventasMes = rventas.readDouble();
+            rventas.skipBytes(1);
+            totalVentas += ventasMes;
+            System.out.println("Mes " + (mes + 1) + " : " + ventasMes);
+        }
+        System.out.println("Total de ventas del año: " + totalVentas);
     }
     
 }
