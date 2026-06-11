@@ -135,6 +135,12 @@ public class EmpleadoManager
     
    
     public void addSaleToEmployee(int code, double monto) throws IOException{
+        if(!isEmployeeActive(code)){
+            System.out.println("Empleado no se encontro o inactivo");
+            return;
+        }
+        
+        
         
     }
     
