@@ -140,7 +140,9 @@ public class EmpleadoManager
             return;
         }
         int mesActual = Calendar.getInstance().get(Calendar.MONTH);
-        
+        RandomAccessFile rventas=salesFileFor(code);
+        long pos =(long) mesActual*9;
+        rventas.seek(pos);
         
         
         
