@@ -66,7 +66,7 @@ public class EmpleadoManager
     }
     
     private String employeeFolder(int code){
-     return "company/empledao"+code;   
+     return "company/empleado"+code;   
     }
     
     private RandomAccessFile salesFileFor(int code) throws IOException{
@@ -213,6 +213,7 @@ public class EmpleadoManager
             return;
         }
         
+        remps.seek(remps.getFilePointer() - 4);
         int codeLeido = remps.readInt();
         String name = remps.readUTF();
         double salary = remps.readDouble();
