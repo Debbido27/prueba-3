@@ -143,7 +143,10 @@ public class EmpleadoManager
         RandomAccessFile rventas=salesFileFor(code);
         long pos =(long) mesActual*9;
         rventas.seek(pos);
-        
+        double ventasActuales=rventas.readDouble();
+        rventas.seek(pos);
+        rventas.writeDouble(ventasActuales+monto);
+        System.out.println("Venta de lps. "+monto+" agregada al empleado "+code);
         
         
     }
