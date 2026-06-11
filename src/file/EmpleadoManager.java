@@ -151,6 +151,10 @@ public class EmpleadoManager
         
     }
     
+    private RandomAccessFile billFileFor(int code) throws IOException{
+        
+    }
+    
     
     
 }
