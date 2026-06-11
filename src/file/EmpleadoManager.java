@@ -160,6 +160,9 @@ public class EmpleadoManager
     
     private boolean isEmployeePayed(int code) throws IOException{
         RandomAccessFile rventas = salesFileFor(code);
+        int mesActual = Calendar.getInstance().get(Calendar.MONTH);
+        long pos =(long)mesActual*9;
+        
         
     }
     
