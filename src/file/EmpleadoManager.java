@@ -170,6 +170,10 @@ public class EmpleadoManager
     }
     
     public void payEmployee(int code) throws IOException{
+        if(!isEmployeeActive(code)|| isEmployeePayed(code)){
+            System.out.println("No se pudo pagar");
+            return;
+        }
         
     }
     
