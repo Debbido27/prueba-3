@@ -175,6 +175,10 @@ public class EmpleadoManager
             return;
         }
         
+        int yearActual = Calendar.getInstance().get(Calendar.YEAR);
+        int mesActual = Calendar.getInstance().get(Calendar.MONTH);
+        
+        
     }
     
 }
