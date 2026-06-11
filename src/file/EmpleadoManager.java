@@ -210,6 +210,13 @@ public class EmpleadoManager
             System.out.println("Empeado no encontrado");
             return;
         }
+        
+        int codeLeido = remps.readInt();
+        String name = remps.readUTF();
+        double salary = remps.readDouble();
+        Date fechaContrato = new Date(remps.readLong());
+        System.out.println("Codigo: "+codeLeido+" Nombre: "+name+" Salario:"+salary+"Fecha de contratacion: "+fechaContrato);
+        
     }
     
 }
