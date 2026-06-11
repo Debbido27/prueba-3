@@ -178,6 +178,10 @@ public class EmpleadoManager
         int yearActual = Calendar.getInstance().get(Calendar.YEAR);
         int mesActual = Calendar.getInstance().get(Calendar.MONTH);
         
+        RandomAccessFile rventas = salesFileFor(code);
+        long posVentas=(long) mesActual*9;
+        rventas.seek(posVentas);
+        double ventas = rventas.readDouble();
         
     }
     
