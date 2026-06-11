@@ -158,5 +158,9 @@ public class EmpleadoManager
     }
     
     
+    private boolean isEmployeePayed(int code) throws IOException{
+        RandomAccessFile rventas = salesFileFor(code);
+        
+    }
     
 }
