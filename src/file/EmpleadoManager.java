@@ -162,7 +162,10 @@ public class EmpleadoManager
         RandomAccessFile rventas = salesFileFor(code);
         int mesActual = Calendar.getInstance().get(Calendar.MONTH);
         long pos =(long)mesActual*9;
-        
+        rventas.seek(pos);
+        rventas.skipBytes(8);
+        boolean pagado = rventas.readBoolean();
+        return pagado;
         
     }
     
