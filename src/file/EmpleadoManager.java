@@ -227,6 +227,17 @@ public class EmpleadoManager
             System.out.println("Mes " + (mes + 1) + " : " + ventasMes);
         }
         System.out.println("Total de ventas del año: " + totalVentas);
+        
+   RandomAccessFile rrecibos = billsFileFor(code);
+        int totalRecibos = 0;
+        rrecibos.seek(0);
+        while (rrecibos.getFilePointer() < rrecibos.length()) {
+            rrecibos.skipBytes(32);
+            totalRecibos++;
+        }
+        System.out.println("Total de pagos realizados: " + totalRecibos);
     }
+
+    
     
 }
