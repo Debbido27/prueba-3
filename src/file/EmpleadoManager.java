@@ -151,7 +151,7 @@ public class EmpleadoManager
         
     }
     
-    private RandomAccessFile billFileFor(int code) throws IOException{
+    private RandomAccessFile billsFileFor(int code) throws IOException{
         String dirPadre = employeeFolder(code);
         String path = dirPadre+"/recibos.emp";
         return new RandomAccessFile(path, "rw");
@@ -182,6 +182,26 @@ public class EmpleadoManager
         long posVentas=(long) mesActual*9;
         rventas.seek(posVentas);
         double ventas = rventas.readDouble();
+        
+        String name = remps.readUTF();
+        double salario = remps.readDouble();
+        
+        double sueldo = salario+(ventas*0.10);
+        double deduccion = sueldo *0.035;
+        double total = sueldo-deduccion;
+        
+        RandomAccessFile rrecibos = billsFileFor(code);
+        rrecibos.seek(rrecibos.length());
+        rrecibos.writeLong(new Date().getTime());
+        rrecibos.writeDouble(sueldo);
+        rrecibos.writeDouble(deduccion);
+        rrecibos.writeInt(yearActual);
+        rrecibos.writeInt(mesActual);
+
+        rventas.seek(posVentas + 8);
+        rventas.writeBoolean(true);
+
+        System.out.println("Empleado " + name + " se le pago Lps. " + total);
         
     }
     
