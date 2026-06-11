@@ -133,5 +133,11 @@ public class EmpleadoManager
         return false;
     }
     
+   
+    public void addSaleToEmployee(int code, double monto) throws IOException{
+        
+    }
+    
+    
     
 }
