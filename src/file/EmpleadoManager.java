@@ -205,4 +205,11 @@ public class EmpleadoManager
         
     }
     
+    public void printEmployee(int code) throws IOException{
+        if(!isEmployeeActive(code)){
+            System.out.println("Empeado no encontrado");
+            return;
+        }
+    }
+    
 }
