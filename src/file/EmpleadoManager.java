@@ -139,6 +139,8 @@ public class EmpleadoManager
             System.out.println("Empleado no se encontro o inactivo");
             return;
         }
+        int mesActual = Calendar.getInstance().get(Calendar.MONTH);
+        
         
         
         
