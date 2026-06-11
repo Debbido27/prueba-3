@@ -29,6 +29,7 @@ public class EmpleadoManager
             File mf = new File("company");
             mf.mkdir();
             rcods = new RandomAccessFile("company/codigo.emp", "rw");
+            remps= new RandomAccessFile("company/empleado.emp","rw");
             initCode();
         } catch (IOException e) {
             System.out.println(e.getMessage());
@@ -60,6 +61,7 @@ public class EmpleadoManager
         remps.writeDouble(salary);
         remps.writeLong(Calendar.getInstance().getTimeInMillis());
         remps.writeLong(0);
+        createEmployeeFolder(code);
         
     }
     
@@ -70,7 +72,7 @@ public class EmpleadoManager
     private RandomAccessFile salesFileFor(int code) throws IOException{
         String dirPadre=employeeFolder(code);
         int yearActual = Calendar.getInstance().get(Calendar.YEAR);
-        String path = dirPadre="/ventas"+yearActual+".emp";
+        String path = dirPadre+"/ventas"+yearActual+".emp";
         return new RandomAccessFile(path,"rw");
         
     }
