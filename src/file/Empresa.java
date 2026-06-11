@@ -21,7 +21,8 @@ public class Empresa {
         System.out.println("3- Agregar Venta a Empleado");
         System.out.println("4- Pagar Empleado");
         System.out.println("5- Despedir Empleado");
-        System.out.println("6- Salir");
+        System.out.println("6- Ver empleado");
+           System.out.println("7-Salir");
         System.out.println("Escoja una opción: ");
         opcion=lea.nextInt();
         lea.nextLine();
